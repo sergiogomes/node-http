@@ -1,5 +1,7 @@
 const home = (req, res) => {
-  res.send('Home')
+  res.render('Home', {
+    time: new Date().getTime()
+  })
 }
 
 module.exports = {
