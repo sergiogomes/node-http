@@ -3,7 +3,9 @@ const router = express.Router()
 const clientsController = require('../controllers/clients')
 
 router.get('/', (req, res) => {
-  res.send('Clients home')
+  res.render('clients',
+    { message: 'Clients home' }
+  )
 })
 
 router.get('/list', clientsController.list)

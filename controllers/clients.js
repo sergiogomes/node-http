@@ -1,9 +1,13 @@
 const list = (req, res) => {
-  res.send('Clients list')
+  res.render('clients',
+    { message: 'Clients list' }
+  )
 }
 
 const create = (req, res) => {
-  res.send('New client')
+  res.render('clients',
+    { message: 'New client' }
+  )
 }
 
 module.exports = {
