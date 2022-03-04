@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+  <p><%= message %></p>
+  <ul>
+    <% clientList.forEach((client) => { %>
+      <li>
+        <span><%= client.id %> -</span>
+        <span><%= client.name %></span>
+      </li>
+    <% })%>
+  </ul>
+<%- include('../partials/footer') %>

@@ -4,7 +4,7 @@ const clientsController = require('../controllers/clients')
 
 router.get('/', (req, res) => {
   res.render('clients',
-    { message: 'Clients home' }
+    { message: 'Client pages:' }
   )
 })
 
