@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+  <p>The result is: <%= result %></p>
+
+  <% if (result % 2 === 0) { %>
+    <p>Result is even</p>
+  <% } else { %>
+    <p>Result is odd</p>
+  <% } %>
+
+<%- include('../partials/footer') %>

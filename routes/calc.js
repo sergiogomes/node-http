@@ -3,7 +3,9 @@ const router = express.Router()
 const calcController = require('../controllers/calc')
 
 router.get('/', (req, res) => {
-  res.send('Calculator operations: /sum')
+  res.render('calc', {
+    message: 'Calculator operations:',
+  })
 })
 
 router.get('/sum', calcController.sum)
