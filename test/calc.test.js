@@ -16,17 +16,18 @@ describe('calc controller', () => {
     })
 
     it('2 + 3 should result 5', () => {
-      let res = {
-        send: function(){}
+      const args = { result: 5 }
+      const res = {
+        render: function(){}
       }
-      let req = {
+      const req = {
         query: {
           num1: '2',
           num2: '3',
         }
       }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('The result is: 5')
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('sum', args)
       calcController.sum(req, res)
     })
   })
