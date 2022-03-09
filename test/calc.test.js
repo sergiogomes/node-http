@@ -5,12 +5,13 @@ const sinon = require('sinon')
 describe('calc controller', () => {
   describe('sum', () => {
     it('no args should return an error message', () => {
-      let res = {
-        send: function(){}
+      const args = { message: 'Please, provide num1 and num2' }
+      const res = {
+        render: function(){}
       }
-      let req = { query: {} }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('Please, provide num1 and num2')
+      const req = { query: {} }
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('calc', args)
       calcController.sum(req, res)
     })
 
