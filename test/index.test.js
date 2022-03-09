@@ -4,11 +4,11 @@ const sinon = require('sinon')
 
 describe('index controller', () => {
   it('should return home', () => {
-    let res = {
-      send: function(){}
+    const res = {
+      render: function(){}
     }
-    let mock = sinon.mock(res)
-    mock.expects('send').once().withArgs('Home')
+    const mock = sinon.mock(res)
+    mock.expects('render').once().withArgs('Home', { time: new Date().getTime() })
     indexController.home({}, res)
   })
 })
