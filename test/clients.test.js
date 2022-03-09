@@ -5,22 +5,34 @@ const sinon = require('sinon')
 describe('clients controller', () => {
   describe('list', () => {
     it('should return all clients', () => {
-      let res = {
-        send: function(){}
+      const args = {
+        message: 'Client list:',
+        clientList: [
+          {id: 1, name: 'Sergio', type: 'A'},
+          {id: 2, name: 'Paulo', type: 'A'},
+          {id: 3, name: 'Nicolas', type: 'B'},
+          {id: 4, name: 'Cindy', type: 'C'},
+        ],
       }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('Clients list')
+      const res = {
+        render: function(){}
+      }
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('clientList', args)
       clientsController.list({}, res)
     })
   })
 
   describe('create', () => {
     it('should create a new client', () => {
-      let res = {
-        send: function(){}
+      const args = {
+        message: 'New client'
       }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('New client')
+      const res = {
+        render: function(){}
+      }
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('clients', args)
       clientsController.create({}, res)
     })
   })
