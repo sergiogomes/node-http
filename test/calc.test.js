@@ -34,16 +34,17 @@ describe('calc controller', () => {
 
   describe('even', () => {
     it('2 should be even', () => {
-      let res = {
-        send: function(){}
+      const args = { message: 'Number 2 is even' }
+      const res = {
+        render: function(){}
       }
-      let req = {
+      const req = {
         params: {
           num: '2'
         }
       }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('Number is even')
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('even', args)
       calcController.even(req, res)
     })
 
