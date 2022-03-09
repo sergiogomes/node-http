@@ -49,16 +49,17 @@ describe('calc controller', () => {
     })
 
     it('3 should be odd', () => {
-      let res = {
-        send: function(){}
+      const args = { message: 'Number 3 is odd' }
+      const res = {
+        render: function(){}
       }
-      let req = {
+      const req = {
         params: {
           num: '3'
         }
       }
-      let mock = sinon.mock(res)
-      mock.expects('send').once().withArgs('Number is odd')
+      const mock = sinon.mock(res)
+      mock.expects('render').once().withArgs('even', args)
       calcController.even(req, res)
     })
   })
